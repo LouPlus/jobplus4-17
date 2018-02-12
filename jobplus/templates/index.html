@@ -4,4 +4,13 @@
 
 {% block body %}
 	<h1>Hello, Jobplus!</h1>
+	{% for job in jobs %}
+		<h2>招聘岗位：{{ job.name }}</h2>
+		<h2>薪资水平：{{ job.salary_low }} - {{ job.salary_high }}</h2>
+		<h2>工作地点：{{ job.location }}</h2>
+		<h2>工作标签：{{ job.tags }}</h2>
+		<h2>年限要求：{{ job.experience_requirement }}</h2>
+		<h2>学历要求：{{ job.degree_requirement }}</h2>
+		<h2>公司名称：{{ job.company.name }}</h2>
+	{% endfor %}
 {% endblock %}
