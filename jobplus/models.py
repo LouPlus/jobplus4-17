@@ -55,7 +55,7 @@ class Company(Base):
 
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(64), nullable=False, index=True, unique=True)
-	logo = db.Column(db.String(64))
+	logo = db.Column(db.String(128))
 	email = db.Column(db.String(24))
 	location = db.Column(db.String(24))
 	fund_raising = db.Column(db.String(24))
