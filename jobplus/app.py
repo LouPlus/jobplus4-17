@@ -14,4 +14,7 @@ def create_app(config):
 	db.init_app(app)
 	Migrate(app, db)
 	register_blueprints(app)
+
 	return app
+
+
