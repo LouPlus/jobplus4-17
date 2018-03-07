@@ -34,10 +34,5 @@ def login():
 def logout():
 	logout_user()
 	flash("注销成功", "success")
-	# print("logout")
-<<<<<<< HEAD
 	return redirect(url_for('front.index'))
-=======
-	return redirect(url_for('front.index'))
-	return render_template(url_for('front.index'))
->>>>>>> bfb9356a84a7ed3848b197f5addb5bb4a5a59d1d
+
