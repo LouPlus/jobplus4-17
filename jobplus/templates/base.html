@@ -30,9 +30,38 @@
 						<li><a href="#">公司</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">公司注册</a></li>
-						<li><a href="#">求职者注册</a></li>
-						<li><a href="{{ url_for('front.login') }}">登录</a></li>
+						{% if current_user.is_authenticated %}
+						<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ current_user.username }}<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									{% if current_user.is_admin or current_user.is_company %}
+										{% if current_user.is_company %}
+										<li>
+											<a href="#" class="text-center">公司主页</a>
+										</li>
+										{% endif %}
+									<li>
+										
+										<a href="{% if current_user.is_admin %}
+												#
+												{% else %}
+												#
+												{% endif %}" 
+												class="text-center">管理中心
+										</a>
+									</li>
+									{% else %}
+									<li><a href="#" class="text-center">个人主页</a></li>
+									{% endif %}
+									<li role="separator" class="divider"></li>
+									<li><a href="{{ url_for('front.logout') }}" class="text-center">退出登录</a></li>
+								</ul>
+							</li>
+						{% else %}
+							<li><a href="#">公司注册</a></li>
+							<li><a href="#">求职者注册</a></li>
+							<li><a href="{{ url_for('front.login') }}">登录</a></li>
+						{% endif %}
 					</ul>
 
 				</div><!-- /.navbar-collapse -->
