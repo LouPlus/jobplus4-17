@@ -12,3 +12,5 @@
 - [xianyucode](https://github.com/xianyucode)
 
 - [超宝宝](https://github.com/chasonzhang)
+
+- [Wang Shawn](https://github.com/WangShawnXyz)
