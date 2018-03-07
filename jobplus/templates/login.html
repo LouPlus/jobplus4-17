@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Jobplus-请登录{% endblock %}
 
 {% block body %}
 	<div class="jumbotron">
-		<h1>Hello, Jobplus!</h1>
-		<p>互联网招聘网站</p>
+		<h1>登录</h1>
 	</div>
 	<div class="row">
-        
+		<form method="POST" action="{{ url_for('front.login') }}">
+			{{ form.csrf_token }}
+			<div class="form-group">
+				{{ form.email.label }} {{ form.email(class="form-control") }}
+			</div>
+			<div class="form-group">
+				{{ form.password.label }} {{ form.password(class="form-control") }}
+			</div>
+			<div class="checkbox">
+				<label>
+					{{ form.remember_me() }} {{ form.remember_me.label.text }}
+				</label>
+			</div>
+			{{ form.submit(class="btn btn-primary") }}
+		</form>
 	</div>
 {% endblock %}
